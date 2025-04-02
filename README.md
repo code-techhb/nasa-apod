@@ -1,4 +1,4 @@
-# NASA APOD Explorer 🪐
+# NASA APOD Explorer 🛸
 
 ![NASA APOD Explorer Screenshot](./public/solution.png)
 
@@ -55,9 +55,9 @@ Building this project helped me learn about:
 - Creating a responsive UI without external libraries
 - Error handling and user experience design
 
-## Personal Goals 🎯
+## Personal Goal 🎯
 
-This project was developed as part of my Web 102 course with CodePath to enhance my React skills while blending my passion for astronomy with web development. The NASA APOD API offers a fantastic opportunity to practice real-world API integration while exploring the wonders of space.
+This project was developed as part of my Web 102 course with [CodePath](https://www.codepath.org/) to enhance my React skills while blending my passion for astronomy with web development. The NASA APOD API offers a fantastic opportunity to practice real-world API integration while exploring the wonders of space.
 
 ## Contributing 🤝🏾
 
@@ -69,4 +69,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Created with 🛸👩🏾‍🚀🪐✨🔭🚀🌌 by [Houlaymatou B.](https://github.com/your-username)
+Created with 🛸👩🏾‍🚀🪐✨🔭🚀🌌 by [Houlaymatou B.](https://github.com/code-techhb)
