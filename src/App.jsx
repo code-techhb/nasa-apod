@@ -5,12 +5,14 @@ import AlreadySeenList from "./components/AlreadySeenList";
 import BannedList from "./components/BannedList";
 
 function App() {
+  //-------------- State management vars ------------------
   const [currentImage, setCurrentImage] = useState(null);
   const [seenImages, setSeenImages] = useState([]);
   const [bannedImages, setBannedImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  //--------------Fetch data fn -----------------------
   const fetchNasaImage = async (date = "") => {
     setLoading(true);
     try {
@@ -20,18 +22,14 @@ function App() {
       if (date) {
         url += `&date=${date}`;
       }
-
       const response = await fetch(url);
       const data = await response.json();
 
-      // Check if this image is already in the banned list
       if (bannedImages.some((img) => img.date === data.date)) {
         const yesterday = getPreviousDay(date || new Date());
         fetchNasaImage(yesterday);
         return;
       }
-      // console.log("NASA API response data:", data);
-
       // Check if date E
       if (!data.date) {
         console.error("Missing date in NASA API response:", data);
@@ -50,14 +48,8 @@ function App() {
       const isDuplicate = seenImages.some((img) => img.id === imageWithId.id);
 
       if (!isDuplicate) {
-        // console.log(`Adding new image from ${data.date} to seen list`);
         setSeenImages((prev) => [imageWithId, ...prev]);
       }
-      // else {
-      //   console.log(
-      //     `Image from ${data.date} already in seen list, not adding duplicate`
-      //   );
-      // }
       setLoading(false);
     } catch (err) {
       setError("Failed to fetch NASA image. Please try again later.");
@@ -80,7 +72,6 @@ function App() {
     const randomDate = new Date(start + Math.random() * (end - start));
     const formattedDate = randomDate.toISOString().split("T")[0];
 
-    // console.log(`Discovering image for date: ${formattedDate}`);
     setLoading(true);
     setCurrentImage(null);
     setTimeout(() => {
@@ -94,7 +85,6 @@ function App() {
         ...currentImage,
         id: `banned_${currentImage.date}`,
       };
-      // Check if the image is already banned before adding
       const isAlreadyBanned = bannedImages.some(
         (img) => img.id === bannedImage.id
       );
@@ -124,16 +114,15 @@ function App() {
     const isDuplicate = seenImages.some((img) => img.id === imageWithId.id);
 
     if (!isDuplicate && !imageWithId.id.startsWith("banned_")) {
-      // console.log(`Adding viewed image from ${imageWithId.date} to seen list`);
       setSeenImages((prev) => [imageWithId, ...prev]);
     }
   };
 
+  //-------------- UI-----------------------
   return (
     <div className="app-container">
       <header>
         <h1>NASA Astronomy Picture of the Day</h1>
-        <h2>Project 3</h2>
       </header>
 
       <main className="content-container">

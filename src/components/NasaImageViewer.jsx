@@ -66,10 +66,10 @@ const NasaImageViewer = ({
         <p className="explanation">{currentImage.explanation}</p>
         <div className="image-actions">
           <button className="discover-btn" onClick={onDiscover}>
-            Discover
+            Show me more 😍
           </button>
           <button className="ban-btn" onClick={onBanImage}>
-            Ban This Image
+            Don't show again 😊
           </button>
         </div>
       </div>

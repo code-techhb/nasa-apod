@@ -29,12 +29,7 @@ header h1 {
   margin-bottom: 10px;
 }
 
-header h2 {
-  color: #90e0ef;
-  font-weight: normal;
-}
-
-/* Main layout according to wireframe */
+/* Main layout */
 .content-container {
   display: flex;
   gap: 20px;
