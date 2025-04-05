@@ -6,6 +6,8 @@ const NasaImageViewer = ({
   error,
   onDiscover,
   onBanImage,
+  onFavorite,
+  favoriteImages,
 }) => {
   if (loading) {
     return (
@@ -41,6 +43,18 @@ const NasaImageViewer = ({
     );
   }
 
+  const getCurrentRating = () => {
+    if (!currentImage) return 0;
+
+    const favorite = favoriteImages.find(
+      (img) => img.id === currentImage.id || img.date === currentImage.date
+    );
+
+    return favorite ? favorite.rating : 0;
+  };
+
+  const currentRating = getCurrentRating();
+
   return (
     <div className="nasa-viewer">
       <div className="image-container">
@@ -64,6 +78,7 @@ const NasaImageViewer = ({
         <h2>{currentImage.title}</h2>
         <p className="date">{currentImage.date}</p>
         <p className="explanation">{currentImage.explanation}</p>
+
         <div className="image-actions">
           <button className="discover-btn" onClick={onDiscover}>
             Show me more 😍
@@ -71,6 +86,21 @@ const NasaImageViewer = ({
           <button className="ban-btn" onClick={onBanImage}>
             Don't show again 😊
           </button>
+
+          {/* <label htmlFor="rating-select">Rate this image: </label> */}
+          <select
+            id="rating-select"
+            className="rating-select rating-container"
+            value={currentRating || ""}
+            onChange={(e) => onFavorite(Number(e.target.value))}
+          >
+            <option value="" disabled>
+              Add to Favs Dashboard ♥️
+            </option>
+            <option value="3">❤️❤️❤️ (3 stars)</option>
+            <option value="4">❤️❤️❤️❤️ (4 stars)</option>
+            <option value="5">❤️❤️❤️❤️❤️ (5 stars)</option>
+          </select>
         </div>
       </div>
     </div>
