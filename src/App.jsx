@@ -4,7 +4,7 @@ import "./App.css";
 import NasaImageViewer from "./components/NasaImageViewer";
 import AlreadySeenList from "./components/AlreadySeenList";
 import BannedList from "./components/BannedList";
-import FavoritesDashboard from "./components/favoritesDashboard";
+import FavoritesDashboard from "./components/FavoritesDashboard";
 
 function App() {
   //-------------- State management w/ localStorage ------------------
