@@ -1,72 +1,82 @@
-# NASA APOD Explorer 🛸
+# Web Development Project 5 - _NASA APOD Explorer_ 🪐
 
-![NASA APOD Explorer Screenshot](./public/solution.png)
+Submitted by: **Houlaymatou B.**
 
-A React-based web application that lets you explore NASA's Astronomy Picture of the Day archive. Discover stunning astronomical images, manage your viewing history, and curate your experience by filtering out content you don't want to see again.
+This web app: **A dashboard application that lets users explore NASA's Astronomy Picture of the Day archive, save favorites, rate images, and filter content through an advanced dashboard interface.**
 
-## Features ✨
+## Required Features ✨
 
-- **Explore the Cosmos**: View today's Astronomy Picture of the Day directly from NASA's API
-- **Discovery Mode**: Randomly explore NASA's extensive archive dating back to 1995
-- **Viewing History**: Keep track of images you've already seen
-- **Content Filtering**: Ban images you don't want to see again
-- **Responsive Design**: Works beautifully on desktop and mobile devices
+The following **required** functionality is completed:
 
-## Live Demo 🌐
+- [x] **The site has a dashboard displaying a list of data fetched using an API call**
+  - The dashboard displays favorite astronomical images and videos, one per row
+  - Each row includes image thumbnail, title, author, date, media type, and rating
+- [x] **`useEffect` React hook and `async`/`await` are used**
+  - Used for API calls to NASA's APOD service and for localStorage persistence
+- [x] **The app dashboard includes at least three summary statistics about the data**
+  - Total number of favorite images
+  - Average rating across all favorites
+  - Distribution of media types (images vs videos)
+- [x] **A search bar allows the user to search for an item in the fetched data**
+  - The search bar correctly filters by author name or date
+  - Results update dynamically as users type in the search field
+- [x] **An additional filter allows the user to restrict displayed items by specified categories**
+  - Filters include author, rating, and media type
+  - Each filter correctly restricts the displayed items
+  - The dashboard updates immediately as filters are applied
 
-[Check out the live demo ](https://nasa-apoc-hb.vercel.app/)
+The following **optional** features are implemented 🚀:
 
-## Tech Stack 👩🏽‍💻
+- [x] Multiple filters can be applied simultaneously
+  - Search, author filter, rating filter, and media type filter work together
+- [x] Filters use different input types
+  - Text input for search
+  - Dropdown selections for author, rating, and media type
+- [x] The user can enter specific bounds for filter values
+  - Rating filter allows selecting minimum rating threshold (3+, 4+, or 5 hearts)
 
-- React.js
-- NASA APOD API
-- CSS3
-- JavaScript
+The following **additional** features are implemented 🎉:
 
-## Project Structure 🗂️
+- [x] Local storage persistence to save user preferences between sessions
+- [x] Rating system that allows users to rate images with 3-5 hearts
+- [x] React Router implementation for navigation between views
+- [x] Image click functionality to view full details in main explorer
+- [x] Confirmation dialog before clearing user data
+- [x] Responsive design that works on mobile and desktop devices
+- [x] Unknown author filtering option for images without copyright information
 
-```
-src/
-├── components/
-│   ├── NasaImageViewer.jsx  # Main image display component
-│   ├── AlreadySeenList.jsx  # Component for viewing history
-│   └── BannedList.jsx       # Component for banned content
-├── App.jsx                  # Main application component
-├── App.css                  # Styles for the application
-└── index.js                 # Entry point
-```
+## Video Walkthrough 👩🏽‍💻
 
-## Future Enhancements 💡
+Here's a walkthrough of implemented user stories:
 
-- [ ] Add local storage to persist data between sessions
-- [ ] Implement a favorites collection feature
-- [ ] Add search functionality by date or keyword
-- [ ] Create a calendar view to pick specific dates
-- [ ] Add sharing functionality for social media
-- [ ] Implement a dark/light theme toggle
+<img src='https://imgur.com/CLiwBng' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-## Challenges and Learnings 📚
+<!-- Replace this with whatever GIF tool you used! -->
 
-Building this project helped me learn about:
+GIF created with Imgur
 
-- Working with external APIs and handling API responses
-- State management in React
-- Component-based architecture in frontend applications
-- Creating a responsive UI without external libraries
-- Error handling and user experience design
+## Notes 📝
 
-## Personal Goal 🎯
+Challenges encountered while building the app:
 
-This project was developed as part of my Web 102 course with [CodePath](https://www.codepath.org/) to enhance my React skills while blending my passion for astronomy with web development. The NASA APOD API offers a fantastic opportunity to practice real-world API integration while exploring the wonders of space.
-
-## Contributing 🤝🏾
-
-While this is a personal project, suggestions and feedback are welcome! Feel free to open an issue or submit a pull request if you have ideas for improvements.
+- Managing multiple state variables across different components
+- Implementing proper filtering logic that could handle all filter combinations
+- Optimizing performance with useMemo for filtered data
+- Managing responsive design for both the explorer and dashboard views
+- Handling cases where the NASA API returned incomplete data (missing copyright/author information)
 
 ## License ⚖️
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+    Copyright [2025] [Houlaymatou B.]
 
----
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-Created with 🛸👩🏾‍🚀🪐✨🔭🚀🌌 by [Houlaymatou B.](https://github.com/code-techhb)
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

@@ -1,6 +1,6 @@
 import React from "react";
 
-const BannedList = ({ bannedImages, onRemoveFromBanned, onViewImage }) => {
+const BannedList = ({ bannedImages, onRemoveFromBanned }) => {
   return (
     <div className="banned-list">
       <h3>Ban List</h3>
@@ -13,7 +13,7 @@ const BannedList = ({ bannedImages, onRemoveFromBanned, onViewImage }) => {
               key={image.id || `banned_${image.date}`}
               className="banned-item"
             >
-              <div
+              {/* <div
                 className="banned-thumbnail"
                 onClick={() => onViewImage(image)}
               >
@@ -24,14 +24,12 @@ const BannedList = ({ bannedImages, onRemoveFromBanned, onViewImage }) => {
                     <span className="video-icon">▶</span>
                   </div>
                 )}
-              </div>
+              </div> */}
               <div className="banned-info">
                 <p className="banned-title">{image.title}</p>
                 <p className="banned-date">{image.date}</p>
                 <button
                   className="unban-btn"
-                  // FIXED: Use the same ID format that was used when adding to the banned list
-                  // This ensures we can correctly remove the item
                   onClick={() =>
                     onRemoveFromBanned(image.id || `banned_${image.date}`)
                   }
