@@ -18,6 +18,24 @@ const DashboardCharts = ({ favoriteImages }) => {
   const [activeChart, setActiveChart] = useState("ratings");
   const navigate = useNavigate();
 
+  // Check if there are any favorite images
+  if (favoriteImages.length === 0) {
+    return (
+      <div className="dashboard-charts empty-state">
+        <div className="empty-state-message">
+          <h3>Data Visualization</h3>
+          <p>
+            You haven't saved any astronomy pictures yet 🥲. Start exploring now
+            to see some great analysis here 🤩!
+          </p>
+          <button className=" nav-link" onClick={() => navigate("/")}>
+            Start Exploring
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   // Process data for Ratings Distribution Chart
   const prepareRatingData = () => {
     const ratingCounts = [0, 0, 0];

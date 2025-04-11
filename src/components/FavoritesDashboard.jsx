@@ -102,7 +102,18 @@ const FavoritesDashboard = ({ favoriteImages, onViewImage }) => {
       <header className="dashboard-header">
         <h1>Your Favorite Astronomy Pictures</h1>
         <div className="nav-link-container">
-          <Link to="/analytics" className="nav-link">
+          <Link
+            to="/analytics"
+            className={`nav-link ${
+              favoriteImages.length === 0 ? "disabled-link" : ""
+            }`}
+            onClick={(e) => {
+              if (favoriteImages.length === 0) {
+                e.preventDefault();
+                // Optionally show a tooltip or message here
+              }
+            }}
+          >
             See Analytics
           </Link>
           <Link to="/" className="nav-link">

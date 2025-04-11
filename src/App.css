@@ -465,6 +465,26 @@ button {
   background-color: var(--color-primary-hover);
 }
 
+.disabled-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.disabled-link:hover::after {
+  content: "🎉 Start saving your favorites to unlock amazing analytics! 🚀";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-danger-hover);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 10;
+}
 /* ----------------- FavoritesDashboard component styles ----------------------- */
 .dashboard-stats {
   display: flex;
