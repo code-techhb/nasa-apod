@@ -97,9 +97,14 @@ const FavoritesDashboard = ({ favoriteImages, onViewImage }) => {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <h1>Your Favorite Astronomy Pictures</h1>
-        <Link to="/" className="nav-link">
-          Back to Explorer
-        </Link>
+        <div className="nav-link-container">
+          <Link to="/analytics" className="nav-link">
+            See Analytics
+          </Link>
+          <Link to="/" className="nav-link">
+            Back to Explorer
+          </Link>
+        </div>
       </header>
 
       <div className="dashboard-stats">
@@ -143,7 +148,9 @@ const FavoritesDashboard = ({ favoriteImages, onViewImage }) => {
               <option value="unknown">Unknown</option>
               {uniqueAuthors.map((author) => (
                 <option key={author} value={author}>
-                  {author}
+                  {author.length > 10
+                    ? `${author.slice(0, 10)} , Et al.`
+                    : author}
                 </option>
               ))}
             </select>

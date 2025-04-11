@@ -52,7 +52,7 @@ body {
   color: var(--color-text);
 }
 
-/* Container styles */
+/* ----------------- Container styles ----------------------- */
 .app-container,
 .dashboard-container {
   max-width: var(--container-max-width);
@@ -60,7 +60,7 @@ body {
   padding: var(--spacing-xl);
 }
 
-/* Header styles */
+/* ----------------- Header styles ----------------------- */
 header,
 .dashboard-header {
   display: flex;
@@ -78,7 +78,7 @@ header h1 {
   margin-right: auto;
 }
 
-/* Button styles */
+/* ----------------- Buttons styles ----------------------- */
 button {
   padding: var(--button-padding);
   border: none;
@@ -134,7 +134,7 @@ button {
   margin-top: 0;
 }
 
-/* Card and container styles */
+/* ----------------- Card & LP Container styles  ----------------------- */
 .card-style {
   border: var(--border-standard);
   border-radius: var(--border-radius-md);
@@ -198,7 +198,7 @@ button {
   text-decoration: underline;
 }
 
-/* NASA Image Viewer Component */
+/* ----------------- NASA Image Viewer Component styles ----------------------- */
 .nasa-viewer {
   display: flex;
   flex-direction: column;
@@ -322,7 +322,7 @@ button {
   padding: var(--spacing-xxl);
 }
 
-/* Thumbnail styles */
+/* ----------------- Thumbnails styles ----------------------- */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
@@ -383,7 +383,7 @@ button {
   text-align: center;
 }
 
-/* Banned List Component */
+/* ----------------- Banned List Component styles ----------------------- */
 .banned-grid {
   display: flex;
   flex-direction: column;
@@ -445,7 +445,12 @@ button {
   background: var(--color-button-neutral-hover);
 }
 
-/* Navigation */
+/* ----------------- Navigation Links styles ----------------------- */
+.nav-link-container {
+  display: flex;
+  gap: 1rem;
+}
+
 .nav-link {
   background-color: var(--color-primary);
   color: var(--color-text);
@@ -460,7 +465,7 @@ button {
   background-color: var(--color-primary-hover);
 }
 
-/* Dashboard styles */
+/* ----------------- FavoritesDashboard component styles ----------------------- */
 .dashboard-stats {
   display: flex;
   gap: var(--spacing-xl);
@@ -589,7 +594,188 @@ button {
   color: var(--color-text);
 }
 
-/* Responsive adjustments */
+/* ----------------- DashboardCharts component styles ----------------------- */
+.dashboard-charts {
+  background-color: var(--color-card-bg);
+  border: var(--border-standard);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.chart-controls h3 {
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.chart-toggle {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.chart-toggle-btn {
+  background-color: var(--color-button-neutral);
+  color: var(--color-text);
+  transition: background-color 0.3s;
+}
+
+.chart-toggle-btn.active {
+  background-color: var(--color-primary);
+}
+
+.chart-toggle-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.chart-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  min-height: 350px;
+}
+
+.chart-container h4 {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+}
+
+.view-more {
+  display: flex;
+  justify-content: center;
+}
+
+.view-analytics-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-md);
+}
+
+.view-analytics-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Tooltip customization */
+.recharts-tooltip-wrapper {
+  background-color: var(--color-dark-bg) !important;
+  border: var(--border-standard) !important;
+  border-radius: var(--border-radius-sm) !important;
+}
+
+/* ----------------- Analytics Page component styles ----------------------- */
+.analytics-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xxl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: var(--border-standard);
+}
+
+.analytics-header h1 {
+  color: var(--color-primary);
+}
+
+.analytics-intro {
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chart-selection {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.chart-btn {
+  background-color: var(--color-button-neutral);
+  color: var(--color-text);
+  padding: var(--spacing-md) var(--spacing-lg);
+  transition: background-color 0.3s;
+}
+
+.chart-btn.active {
+  background-color: var(--color-primary);
+}
+
+.chart-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.analytics-chart-container {
+  background-color: var(--color-card-bg);
+  border: var(--border-standard);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  min-height: 400px;
+}
+
+.chart-explanation {
+  background-color: var(--color-card-bg);
+  border: var(--border-standard);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.chart-explanation h4 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.chart-explanation p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+/* Custom tooltip styling */
+.recharts-tooltip-wrapper {
+  background-color: var(--color-dark-bg) !important;
+  border: var(--border-standard) !important;
+  border-radius: var(--border-radius-sm) !important;
+}
+
+.recharts-tooltip-item-list {
+  color: var(--color-primary) !important;
+}
+
+.recharts-tooltip-item-name,
+.recharts-tooltip-item-value {
+  color: var(--color-primary) !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--color-danger) !important;
+  font-weight: bold;
+}
+
+/* ----------------- Media Queries----------------------- */
 /* Larger tablets + small desktops */
 @media screen and (max-width: 1200px) {
   .app-container {
@@ -655,6 +841,24 @@ button {
   }
 
   .filter {
+    width: 100%;
+  }
+
+  .analytics-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .analytics-header h1 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .chart-selection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chart-btn {
     width: 100%;
   }
 }

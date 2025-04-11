@@ -5,6 +5,8 @@ import NasaImageViewer from "./components/NasaImageViewer";
 import AlreadySeenList from "./components/AlreadySeenList";
 import BannedList from "./components/BannedList";
 import FavoritesDashboard from "./components/FavoritesDashboard";
+import DashboardCharts from "./components/DashboardCharts";
+import AnalyticsPage from "./components/AnalyticsPage";
 
 function App() {
   //-------------- State management w/ localStorage ------------------
@@ -190,11 +192,19 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <FavoritesDashboard
-                favoriteImages={favoriteImages}
-                onViewImage={handleViewImage}
-              />
+              <>
+                <FavoritesDashboard
+                  favoriteImages={favoriteImages}
+                  onViewImage={handleViewImage}
+                />
+                <DashboardCharts favoriteImages={favoriteImages} />
+              </>
             }
+          />
+
+          <Route
+            path="/analytics"
+            element={<AnalyticsPage favoriteImages={favoriteImages} />}
           />
 
           <Route
