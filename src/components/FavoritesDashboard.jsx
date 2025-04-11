@@ -93,6 +93,10 @@ const FavoritesDashboard = ({ favoriteImages, onViewImage }) => {
     navigate("/");
   };
 
+  const formatAuthorName = (author) => {
+    return author.length > 10 ? `${author.slice(0, 10)} , Et al.` : author;
+  };
+
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
@@ -148,9 +152,7 @@ const FavoritesDashboard = ({ favoriteImages, onViewImage }) => {
               <option value="unknown">Unknown</option>
               {uniqueAuthors.map((author) => (
                 <option key={author} value={author}>
-                  {author.length > 10
-                    ? `${author.slice(0, 10)} , Et al.`
-                    : author}
+                  {formatAuthorName(author)}
                 </option>
               ))}
             </select>
@@ -225,7 +227,7 @@ const FavoritesDashboard = ({ favoriteImages, onViewImage }) => {
                     )}
                   </td>
                   <td>{image.title}</td>
-                  <td>{image.copyright || "Unknown"}</td>
+                  <td>{formatAuthorName(image.copyright || "Unknown")}</td>
                   <td>{image.date}</td>
                   <td>{image.media_type === "image" ? "📷" : "🎬"}</td>
                   <td>{Array(image.rating).fill("❤️").join("")}</td>

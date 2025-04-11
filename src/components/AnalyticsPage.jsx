@@ -51,15 +51,16 @@ const AnalyticsPage = ({ favoriteImages }) => {
   }, [favoriteImages]);
 
   // Prepare author data
+  const formatAuthorName = (author) => {
+    return author.length > 10 ? `${author.slice(0, 10)} , Et al.` : author;
+  };
+
   const authorData = useMemo(() => {
     const authorCounts = {};
     const authorRatings = {};
 
     favoriteImages.forEach((image) => {
-      const author =
-        image.copyright && image.copyright.length > 10
-          ? `${image.copyright.slice(0, 10)}, Et al.`
-          : image.copyright || "Unknown";
+      const author = formatAuthorName(image.copyright || "Unknown");
       authorCounts[author] = (authorCounts[author] || 0) + 1;
       authorRatings[author] = (authorRatings[author] || 0) + image.rating;
     });
@@ -269,11 +270,9 @@ const AnalyticsPage = ({ favoriteImages }) => {
                 outerRadius={120}
                 fill="#8884d8"
                 dataKey="value"
-                label={({ name, percent }) =>
-                  `${name}: ${(percent * 100).toFixed(0)}%`
-                }
+                label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
               >
-                {mediaTypeData.map((entry, index) => (
+                {mediaTypeData.map((_, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
